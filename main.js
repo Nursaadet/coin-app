@@ -1,19 +1,23 @@
-import "./scss/style.scss";
-import { getCoins } from "./src/getCoins";
+import "./scss/style.scss"
+import { getCoins } from "./src/getCoins"
 
-const form = document.querySelector("header form");
+//? Selectors
 
+const form = document.querySelector("header form")
+
+//? Form için submit event'nin tanimlanmasi
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  getCoinData();
-  e.target.reset();
-});
+  e.preventDefault() //! form eventinin tüm dogal davranilari disable eder.
+  getCoinData()
+  e.target.reset() //? formu silme davranisini aktif hale getir.
+})
 
 const getCoinData = () => {
-  const input = document.querySelector("header form input").value;
+  const input = document.querySelector("header form input").value
   if (!input.trim()) {
-    alert("Input must be entered");
+    alert("Input must be entered")
   } else {
-    getCoins(input);
+    //? GET COIN
+    getCoins(input)
   }
-};
+}
